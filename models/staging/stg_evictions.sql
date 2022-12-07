@@ -17,7 +17,6 @@ WITH evictions AS (
     eviction_possession as eviction_type,
     court_index_number as docket_index_number,
     docket_number
-
     from {{ source('NYC_complaints', 'evictions') }}
 
     where

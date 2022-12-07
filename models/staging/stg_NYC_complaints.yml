@@ -4,10 +4,29 @@ models:
 
   
   - name: stg_evictions
-    description: This model cleans up customer data
+    description: This model cleans up evictions data
     columns:
       - name: eviction_id
         description: Primary key
         tests:
           - unique
           - not_null
+
+  - name: stg_homeless_encampment
+    description: This model cleans up stg_homeless_encampment
+    columns:
+      - name: homeless_encampment_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_homeless_person_pessistancet
+    description: This model cleans up stg_homeless_person_pessistancet
+    columns:
+      - name: homeless_person_pessistancet_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
