@@ -1,0 +1,13 @@
+version: 2
+
+models: 
+
+  
+  - name: stg_evictions
+    description: This model cleans up customer data
+    columns:
+      - name: eviction_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null

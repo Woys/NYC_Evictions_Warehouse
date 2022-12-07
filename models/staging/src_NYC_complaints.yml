@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: NYC_complaints
+    database: cis4400groupproject-370223
+    schema: NYC_complaints
+    tables:
+      - name: evictions
+      - name: homeless_encampment
+      - name: homeless_person_pessistancet
+
+
