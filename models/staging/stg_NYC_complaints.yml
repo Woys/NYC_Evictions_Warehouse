@@ -38,3 +38,6 @@ models:
           - unique
           - not_null
 
+  - name: dim_dates
+    description: dimention
+
