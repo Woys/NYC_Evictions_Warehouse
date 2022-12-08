@@ -3,22 +3,21 @@ WITH homeless_encampment AS (
 
     int64_field_0 AS homeless_encampment_id,
 
-    cast(created_date as date) as created_date, # should i add closed date?
+    cast(created_date as date) as created_date, 
 
     incident_address,
-    incident_zip
+    COALESCE(CAST(incident_zip AS STRING), 'N/A') as incident_zip,
     location_type,
     street_name,
-    address_type,
+    COALESCE(address_type, 'Not Available') as address_type,
     city,
-    landmark, # a lot of null!!
-    borough, # avoid unsepcified type!!!
+    COALESCE(landmark, 'Not Available') as landmark,
+    borough, 
 
     longitude,
     latitude,
-
-    descriptor, # null!!
     complaint_type
+
     
     from {{ source('NYC_complaints', 'homeless_encampment') }}
     where 
@@ -29,6 +28,7 @@ WITH homeless_encampment AS (
         and city is not null 
         and longitude is not null 
         and latitude is not null
+        and borough !='Unspecified' and  borough is not NULL
 
     limit 10 
 

@@ -7,10 +7,11 @@ with evictions_locations as (
     latitude,
     longitude
 
-    from {{ref ('evictions') }}
+    from {{ref ('evictions_data') }}
 ),
 evictions_dim as (
-    SELECT DISTINCT eviction_address,
+    SELECT 
+    DISTINCT COALESCE(eviction_address, 'Not Available') as eviction_address,
     borough,
     eviction_location_type,
     eviction_post_code,
@@ -19,5 +20,5 @@ evictions_dim as (
     longitude
     FROM evictions_locations)
 
-SELECT row_number() over () as location_dim_id,
+SELECT row_number() over () as location_dim_id, *
 from evictions_dim

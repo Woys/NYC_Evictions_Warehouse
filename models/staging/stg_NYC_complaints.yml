@@ -19,17 +19,6 @@ models:
           - unique
           - not_null
 
-  - name: homeless_person_pessistancet_data
-    description: One record per customer stg_homeless_person_pessistancet
-    columns:
-      - name: homeless_person_pessistancet_id
-        description: Primary key
-        tests:
-          - unique
-          - not_null
-
-
-
   
   - name: stg_evictions
     description: This model cleans up evictions data
@@ -44,15 +33,6 @@ models:
     description: This model cleans up stg_homeless_encampment
     columns:
       - name: homeless_encampment_id
-        description: Primary key
-        tests:
-          - unique
-          - not_null
-
-  - name: stg_homeless_person_pessistancet
-    description: This model cleans up stg_homeless_person_pessistancet
-    columns:
-      - name: homeless_person_pessistancet_id
         description: Primary key
         tests:
           - unique
