@@ -6,7 +6,7 @@ with dates_dim as (
 {{ dbt_utils.date_spine(
     datepart="day",
     start_date="cast('2017-01-03' as date)",
-    end_date="cast('2020-04-29' as date)"
+    end_date="cast('2022-12-06' as date)"
    )
 }})
 
