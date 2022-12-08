@@ -5,3 +5,4 @@ from {{ ref('stg_homeless_encampment') }})
 select *
 from homeless_encampment
 
+

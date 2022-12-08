@@ -7,6 +7,5 @@ sources:
     tables:
       - name: evictions
       - name: homeless_encampment
-      - name: homeless_person_pessistancet
 
 

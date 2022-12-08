@@ -9,7 +9,8 @@ WITH evictions AS (
     borough,
     residential_commercial_ind as eviction_location_type,
     eviction_zip as eviction_post_code,
-    eviction_apt_num as apartment_number, # Many nuuls!!
+    #eviction_apt_num as apartment_number, # Many nuuls!!
+    COALESCE(eviction_apt_num, 'Not Available') as apartment_number,
     latitude,
     longitude,
 
@@ -21,7 +22,6 @@ WITH evictions AS (
 
     where
         int64_field_0 IS NOT NULL
-        AND eviction_apt_num IS NOT NULL
         AND latitude IS NOT NULL
         AND longitude IS NOT NULL
     limit 10 
