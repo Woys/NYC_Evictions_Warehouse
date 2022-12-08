@@ -30,7 +30,7 @@ WITH homeless_encampment AS (
         and latitude is not null
         and borough !='Unspecified' and  borough is not NULL
 
-    limit 10 
+    limit 20
 
 )
 
