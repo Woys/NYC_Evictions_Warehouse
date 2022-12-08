@@ -9,5 +9,5 @@ evictions_dim as (
     SELECT DISTINCT *
     FROM evictions_locations)
 
-SELECT row_number() over () as location_dim_id, *
+SELECT row_number() over () as complaint_type_id, *
 from evictions_dim

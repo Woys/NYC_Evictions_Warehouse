@@ -63,5 +63,5 @@ join_tbl as (
         or (evictions.executed_date is null and date_dim.date_value is null))
 )
 
-select *
+SELECT row_number() over () as unique_key, *
 from join_tbl
