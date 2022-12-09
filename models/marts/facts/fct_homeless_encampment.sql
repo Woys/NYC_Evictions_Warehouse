@@ -68,7 +68,7 @@ join_tbl as (
 
 
 
-SELECT row_number() over () as unique_key, *
+SELECT row_number() over () as unique_key_DD, *
 from join_tbl
 
 
