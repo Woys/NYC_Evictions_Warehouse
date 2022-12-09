@@ -7,7 +7,7 @@ WITH homeless_encampment AS (
 
     incident_address,
     incident_zip,
-    COALESCE(CAST(incident_zip AS STRING), 'N/A') as incident_zip,
+    #COALESCE(CAST(incident_zip AS STRING), 'N/A') as incident_zip,
     location_type,
     street_name,
     COALESCE(address_type, 'Not Available') as address_type,
@@ -22,8 +22,10 @@ WITH homeless_encampment AS (
     
     from {{ source('NYC_complaints', 'homeless_encampment') }}
     where 
+         
+        created_date BETWEEN '2017-01-03' AND '2021-07-10'
 
-        location_type is not null 
+        and location_type is not null 
         and incident_zip is not null
         and incident_address is not null 
         and street_name is not null 
@@ -37,3 +39,4 @@ WITH homeless_encampment AS (
 )
 
 SELECT * FROM homeless_encampment
+
