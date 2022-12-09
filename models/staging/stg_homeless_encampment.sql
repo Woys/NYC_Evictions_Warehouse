@@ -6,6 +6,7 @@ WITH homeless_encampment AS (
     cast(created_date as date) as created_date, 
 
     incident_address,
+    incident_zip,
     COALESCE(CAST(incident_zip AS STRING), 'N/A') as incident_zip,
     location_type,
     street_name,
@@ -23,6 +24,7 @@ WITH homeless_encampment AS (
     where 
 
         location_type is not null 
+        and incident_zip is not null
         and incident_address is not null 
         and street_name is not null 
         and city is not null 
