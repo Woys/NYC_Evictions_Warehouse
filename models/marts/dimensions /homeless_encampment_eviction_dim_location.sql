@@ -41,11 +41,12 @@ homeless_encampment_locations as (
 homeless_encampment_dim as (
     SELECT DISTINCT *
     FROM homeless_encampment_locations
-)
+),
 
 
+union_dims as(
 
-SELECT DISTINCT
+SELECT
     longitude,
     latitude,
 
@@ -66,7 +67,7 @@ from evictions_dim
 
 union all
 
-SELECT DISTINCT
+SELECT
     longitude,
     latitude,
 
@@ -85,3 +86,24 @@ SELECT DISTINCT
     city
 
 from homeless_encampment_dim
+
+)
+
+select DISTINCT 
+    longitude,
+    latitude,
+
+    COALESCE(apartment_number, 'Not Available') as apartment_number,
+    COALESCE(street_name, 'Not Available') as street_name,
+
+    COALESCE(eviction_post_code, 0) AS eviction_post_code,
+    COALESCE(incident_zip, 0) AS incident_zip,
+    COALESCE(incident_address, 'Not Available') as incident_address,
+    COALESCE(eviction_address, 'Not Available') as eviction_address,
+    COALESCE(location_type, 'Not Available') as location_type,
+    COALESCE(eviction_location_type, 'Not Available') as eviction_location_type,
+    COALESCE(address_type, 'Not Available') as address_type,
+    COALESCE(landmark, 'Not Available') as landmark,
+    COALESCE(borough, 'Not Available') as borough,
+    COALESCE(city, 'Not Available') as city,
+from union_dims
