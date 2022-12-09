@@ -87,9 +87,10 @@ SELECT
 
 from homeless_encampment_dim
 
-)
+),
 
-select DISTINCT 
+final as (
+    select DISTINCT 
     longitude,
     latitude,
 
@@ -106,4 +107,8 @@ select DISTINCT
     COALESCE(landmark, 'Not Available') as landmark,
     COALESCE(borough, 'Not Available') as borough,
     COALESCE(city, 'Not Available') as city,
-from union_dims
+from union_dims)
+
+
+SELECT row_number() over () as location_dim_id, *
+from final
