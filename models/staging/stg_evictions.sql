@@ -24,7 +24,7 @@ WITH evictions AS (
         and int64_field_0 IS NOT NULL
         AND latitude IS NOT NULL
         AND longitude IS NOT NULL
-    limit 10 
+    #limit 10 
 )
 
 SELECT * FROM evictions
