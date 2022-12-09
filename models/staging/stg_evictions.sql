@@ -9,7 +9,6 @@ WITH evictions AS (
     borough,
     residential_commercial_ind as eviction_location_type,
     eviction_zip as eviction_post_code,
-    #eviction_apt_num as apartment_number, # Many nuuls!!
     COALESCE(eviction_apt_num, 'Not Available') as apartment_number,
     latitude,
     longitude,
