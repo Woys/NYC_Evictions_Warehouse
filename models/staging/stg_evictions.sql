@@ -20,7 +20,8 @@ WITH evictions AS (
     from {{ source('NYC_complaints', 'evictions') }}
 
     where
-        int64_field_0 IS NOT NULL
+        executed_date BETWEEN '2017-01-03' AND '2021-07-10'
+        and int64_field_0 IS NOT NULL
         AND latitude IS NOT NULL
         AND longitude IS NOT NULL
     limit 10 

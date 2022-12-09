@@ -19,11 +19,11 @@ encampment as (
 
 join_tbl as (
 
-    select date_dim.date_dim_id, complaint_type.complaint_type_id, location.location_dim_id #, encampment.* 
+    select date_dim.date_dim_id, complaint_type.complaint_type_id, location.location_dim_id  
     from encampment
 
     LEFT JOIN date_dim on 
-        # ejectment,
+        # created_date,
         ((encampment.created_date = date_dim.date_value)
         or (encampment.created_date is null and date_dim.date_value is null))
 
