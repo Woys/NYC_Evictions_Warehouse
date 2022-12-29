@@ -24,7 +24,7 @@ Fact Tables:
 ![Count of complaints](https://github.com/Woys/NYC_Evictions_Warehouse/blob/main/images/image6.png)
 ![Complaints and evictions by location](https://github.com/Woys/NYC_Evictions_Warehouse/blob/main/images/image8.png)
 ![Evictions per location](https://github.com/Woys/NYC_Evictions_Warehouse/blob/main/images/image10.png)
-![Number of evictions per year](https://github.com/Woys/NYC_Evictions_Warehouse/blob/main/images/image10.png)
+![Number of evictions per year](https://github.com/Woys/NYC_Evictions_Warehouse/blob/main/images/image14.png)
 
 
 
